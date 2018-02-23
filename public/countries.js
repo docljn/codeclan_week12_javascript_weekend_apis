@@ -18,7 +18,14 @@ const makeRequest = function (url, callback) {
 const requestComplete = function () {
   if (this.status !== 200) return;
   const jsonString = this.responseText;
-  localStorage.setItem("countries", jsonString);
+  // localStorage.setItem("countries", jsonString);
+  const countriesArray = JSON.parse(jsonString);
+
+  countriesArray.forEach( function (country) {
+    const shortName = country.alpha2Code;
+    const countryString = JSON.stringify(country);
+    localStorage.setItem(shortName, countryString);
+  });
 };
 
 // call countries once the basic structure of the webpage has loaded

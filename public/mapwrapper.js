@@ -1,9 +1,10 @@
 /*global google*/
 
 const MapWrapper = function (container, coordinates, zoom) {
+  this.markerArray = [];
   this.googleMap = new google.maps.Map(container, {
     center: coordinates,
-    zoom: zoom
+    zoom: zoom,
   });
 };
 
@@ -15,20 +16,24 @@ MapWrapper.prototype.addMarker = function (coordinates) {
   return marker;
 };
 
-MapWrapper.prototype.makeInfoWindow = function (content) {
-  const infowindow = new google.maps.InfoWindow({
-    content: content
-  });
-  return infowindow;
-};
+// MapWrapper.prototype.makeInfoWindow = function (content) {
+//   const infowindow = new google.maps.InfoWindow({
+//     content: content
+//   });
+//   return infowindow;
+// };
 
 MapWrapper.prototype.addClickEvent = function () {
   google.maps.event.addListener(this.googleMap, "click", function (event) {
+    if (this.markerArray.length !== 0){
+      const oldMarker = this.markerArray[0];
+      oldMarker.setMap(null);
+      this.markerArray = [];}
     const clickCoordinates = { lat: event.latLng.lat(), lng: event.latLng.lng() };
     geolocator(clickCoordinates);
     const marker = this.addMarker(clickCoordinates);
-    const infoWindow = this.makeInfoWindow("test");
-    infoWindow.open(this.googleMap, marker);
-
+    this.markerArray.push(marker);
+    this.googleMap.setCenter(clickCoordinates);
+    this.googleMap.setZoom(5);
   }.bind(this));
 };
