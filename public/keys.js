@@ -1,6 +1,6 @@
 const API_LOCATIONS = {
   googleGeocoding: {
-    url: "https://maps.googleapis.com/maps/api/js",
+    url: "https://maps.googleapis.com/maps/api/geocode/",
     key: "AIzaSyCxu-Q3l-hZjd8dRAPQwmluUCm85GiCAME"
   },
   sunrise: {
@@ -14,6 +14,6 @@ const API_LOCATIONS = {
   airQuality: {
     url: "https://www.airvisual.com/user/api",
     key: "GLJGqzbnNkn4rNLXf"
-  },
+  }
 
 };
