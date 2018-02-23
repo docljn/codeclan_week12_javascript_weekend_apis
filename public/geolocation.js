@@ -1,26 +1,4 @@
-// const API_LOCATIONS = {
-//   googleGeocoding: {
-//     url: "https://maps.googleapis.com/maps/api/geocode/",
-//     key: "AIzaSyCxu-Q3l-hZjd8dRAPQwmluUCm85GiCAME"
-//   },
-
-// to make a request, append &key=YOUR_API_KEY to the end of the html request.
-
-
-// request format:   http://maps.googleapis.com/maps/api/geocode/outputFormat?parameters
-
-
-
-
-
 //  correct request for location data:   https://maps.googleapis.com/maps/api/geocode/json?latlng=40.714224,-73.961452&key=YOUR_API_KEY
-
-
-
-
-
-//NB: console.dir(image); gives the node representation
-//NB: console.log(image); gives a simple text representation
 
 const geolocator = function (location) {
 
@@ -28,7 +6,6 @@ const geolocator = function (location) {
   const key = API_LOCATIONS.googleGeocoding.key;
 
   let completeURL = url + "latlng=" + location.lat + "," + location.lng + "&result_type=country" + "&key=" + key;
-
 
   makeGeoRequest(completeURL, carryOutAPIRequest);
 
@@ -45,5 +22,8 @@ const makeGeoRequest = function (url, callback) {
 const carryOutAPIRequest = function () {
   if(this.status !== 200) return;
   const jsonString = this.responseText;
-  console.log(jsonString);
+  // call a function which will get the json back in a usable format in the main app?
+  // think about making info window here
+  displayLocaleDetails(jsonString);
+
 };
