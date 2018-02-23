@@ -24,6 +24,6 @@ const carryOutAPIRequest = function () {
   const jsonString = this.responseText;
   // call a function which will get the json back in a usable format in the main app?
   // think about making info window here
-  displayLocaleDetails(jsonString);
+  displayCountryDetails(jsonString);
 
 };
