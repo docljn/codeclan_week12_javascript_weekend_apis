@@ -27,7 +27,7 @@ const geolocator = function (location) {
   const url = API_LOCATIONS.googleGeocoding.url;
   const key = API_LOCATIONS.googleGeocoding.key;
 
-  let completeURL = url + "latlng=" + location.lat + "," + location.lng + "&key=" + key;
+  let completeURL = url + "latlng=" + location.lat + "," + location.lng + "&result_type=country" + "&key=" + key;
 
 
   makeGeoRequest(completeURL, carryOutAPIRequest);
