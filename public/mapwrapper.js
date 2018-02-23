@@ -12,12 +12,23 @@ MapWrapper.prototype.addMarker = function (coordinates) {
     position: coordinates,
     map: this.googleMap
   });
+  return marker;
+};
+
+MapWrapper.prototype.makeInfoWindow = function (content) {
+  const infowindow = new google.maps.InfoWindow({
+    content: content
+  });
+  return infowindow;
 };
 
 MapWrapper.prototype.addClickEvent = function () {
   google.maps.event.addListener(this.googleMap, "click", function (event) {
     const clickCoordinates = { lat: event.latLng.lat(), lng: event.latLng.lng() };
     console.log(clickCoordinates);
-    this.addMarker(clickCoordinates);
+    const marker = this.addMarker(clickCoordinates);
+    const infoWindow = this.makeInfoWindow("testing");
+    infoWindow.open(this.googleMap, marker);
+
   }.bind(this));
 };

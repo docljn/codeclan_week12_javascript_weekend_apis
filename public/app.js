@@ -8,10 +8,6 @@ const initialize = function () {
   const mainMap = new MapWrapper(mapDiv, center, zoom);
 
 
-  const infowindow = new google.maps.InfoWindow({
-    content: "InfoWindow Information Goes Here"
-  });
-
   // set the map up to respond to a click;
   mainMap.addClickEvent();
 
