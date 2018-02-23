@@ -12,6 +12,7 @@ const initialize = function () {
   mainMap.addClickEvent();
 
 
+
 };
 
 document.addEventListener("DOMContentLoaded", initialize);
