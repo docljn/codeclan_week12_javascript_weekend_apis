@@ -26,6 +26,7 @@ MapWrapper.prototype.addClickEvent = function () {
   google.maps.event.addListener(this.googleMap, "click", function (event) {
     const clickCoordinates = { lat: event.latLng.lat(), lng: event.latLng.lng() };
     console.log(clickCoordinates);
+    geolocator(clickCoordinates);
     const marker = this.addMarker(clickCoordinates);
     const infoWindow = this.makeInfoWindow("testing");
     infoWindow.open(this.googleMap, marker);

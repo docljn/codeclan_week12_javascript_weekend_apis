@@ -1,3 +1,6 @@
+// this stores the data from the open countries api in local storage under "countries"
+
+
 const countries = function(){
   const countriesUrl = API_LOCATIONS.restCountries["url"];
   const getCountries = function () {
@@ -18,9 +21,5 @@ const requestComplete = function () {
   localStorage.setItem("countries", jsonString);
 };
 
-
-
-
-
-// call app once the basic structure of the webpage has loaded
+// call countries once the basic structure of the webpage has loaded
 document.addEventListener("DOMContentLoaded", countries);

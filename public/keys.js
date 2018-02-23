@@ -1,6 +1,6 @@
 const API_LOCATIONS = {
   googleGeocoding: {
-    url: "https://maps.googleapis.com/maps/api/geocode/",
+    url: "https://maps.googleapis.com/maps/api/geocode/json?",
     key: "AIzaSyCxu-Q3l-hZjd8dRAPQwmluUCm85GiCAME"
   },
 
