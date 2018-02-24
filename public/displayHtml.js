@@ -1,5 +1,4 @@
 const generateHtml = function (countryObject) {
-  console.log(countryObject);
   const displayDiv = document.getElementById("description");
   displayDiv.innerHTML = "";
 
@@ -30,8 +29,7 @@ const generateHtml = function (countryObject) {
   displayDiv.appendChild(ul);
 
 
-  displayGraphPopulation(countryObject);
+  displayGraph(countryObject);
 
-  displayGraphArea(countryObject);
 
 };
