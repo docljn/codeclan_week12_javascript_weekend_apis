@@ -16,12 +16,6 @@ MapWrapper.prototype.addMarker = function (coordinates) {
   return marker;
 };
 
-// MapWrapper.prototype.makeInfoWindow = function (content) {
-//   const infowindow = new google.maps.InfoWindow({
-//     content: content
-//   });
-//   return infowindow;
-// };
 
 MapWrapper.prototype.addClickEvent = function () {
   google.maps.event.addListener(this.googleMap, "click", function (event) {

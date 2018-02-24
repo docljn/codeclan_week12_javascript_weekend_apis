@@ -22,7 +22,7 @@ const requestComplete = function () {
   const countriesArray = JSON.parse(jsonString);
 
   countriesArray.forEach( function (country) {
-    const shortName = country.alpha2Code;
+    const shortName = country.alpha3Code;
     const countryString = JSON.stringify(country);
     localStorage.setItem(shortName, countryString);
   });
