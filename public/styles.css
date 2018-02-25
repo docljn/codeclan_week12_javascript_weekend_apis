@@ -1,5 +1,7 @@
 
-
+#flag{
+  border: 1px solid black;
+}
 
 #map{
   height: 400px;
@@ -8,21 +10,13 @@
 }
 
 #details{
-  border: 1px solid black
   height: auto;
   width: 100%;
   display: flex;
-  flex-wrap: wrap;
   box-sizing: border-box;
-  justify-content: space-between;
+  justify-content: space-around;
 }
 
 #details div {
-  border: 1px solid black;
-  width: 30%;
   margin: 5px;
-}
-
-main {
-
 }

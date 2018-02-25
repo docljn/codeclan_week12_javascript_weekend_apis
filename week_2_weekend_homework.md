@@ -8,7 +8,7 @@
 
 ## Task:
 
-Practise what we've done this week using JavaScript in the browser:
+Practice what we've done this week using JavaScript in the browser:
 
 - Fetch information from an API.
 - Display/Analyse the information in the browser using DOM manipulation/Charts/Maps/Canvas etc. Be creative!

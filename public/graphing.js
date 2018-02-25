@@ -89,6 +89,9 @@ const displayGraph = function (countryObject) {
   const areaChart = Highcharts.chart(divArea, areaChartData);
 
 
+
+
+
   // start making the Population Pie Chart Here:
   const populationDataObjects = borderingCountriesObjects.map( function (country) {
     return makeDataObject(country.name, country.population);
@@ -139,14 +142,6 @@ const displayGraph = function (countryObject) {
 
   // actually render the chart
   const populationChart = Highcharts.chart(divPopulation, populationChartData);
-
-
-
-
-
-
-
-
 
 
 };

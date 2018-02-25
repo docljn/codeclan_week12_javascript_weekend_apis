@@ -9,8 +9,8 @@ key: waiting....
 - click on a google map to select a location
 - pop up the country details for the country nearest to the point you clicked on
   - capital city
-  - sunrise/sunset
+  - population and area data
+  - flag
 
 ## Extension
-- add air quality
-- add local weather
+- change map display to show bounds of country clicked on, not just fixed zoom level....
