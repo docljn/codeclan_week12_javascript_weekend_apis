@@ -16,6 +16,7 @@ const generateHtml = function (countryObject) {
   img.height = 100;
   img.src = flag;
   img.alt = adjective + " Flag";
+  img.id = "flag";
 
   const ul = document.createElement("ul");
 
