@@ -48,7 +48,7 @@ const displayGraph = function (countryObject) {
       text: "Relative area of bordering countries"
     },
     tooltip: {
-      pointFormat: "{series.name}: <b>{point.percentage:.1f}%</b>"
+      pointFormat: "<b>{point.percentage:.1f}%</b>"
     },
     plotOptions: {
       pie: {
@@ -72,6 +72,10 @@ const displayGraph = function (countryObject) {
 
   // actually render the chart
   const areaChart = Highcharts.chart(divArea, areaChartData);
+
+
+
+
 
 
   // start making the Population Pie Chart Here:
@@ -100,7 +104,7 @@ const displayGraph = function (countryObject) {
       text: "Relative population of bordering countries"
     },
     tooltip: {
-      pointFormat: "{series.name}: <b>{point.percentage:.1f}%</b>"
+      pointFormat: "<b>{point.percentage:.1f}%</b>"
     },
     plotOptions: {
       pie: {
@@ -118,7 +122,7 @@ const displayGraph = function (countryObject) {
     series: [{
       name: "Countries",
       colorByPoint: true,
-      data: areaDataArray
+      data: populationDataArray
     }]
   };
 
