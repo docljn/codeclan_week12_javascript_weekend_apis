@@ -17,6 +17,25 @@
   justify-content: space-around;
 }
 
+#description{
+  display: flex;
+  flex-wrap: nowrap;
+  padding: 10px;
+  align-items: center;
+}
+
+
 #details div {
   margin: 5px;
+  flex-shrink: 1;
+  flex-basis: 40%;
+}
+
+#flag {
+  border: 1px solid black;
+  margin: 5px;
+}
+
+ul {
+  list-style: none;
 }
