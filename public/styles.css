@@ -2,8 +2,10 @@ h1{
   text-align: center;
 }
 
-#flag{
+#flag img{
   border: 1px solid black;
+  margin: 0;
+  padding: 0;
 }
 
 #map{
@@ -34,11 +36,6 @@ h1{
   margin: 5px;
   flex-shrink: 1;
   flex-basis: 40%;
-}
-
-#flag {
-  border: 1px solid black;
-  margin: 5px;
 }
 
 ul {
