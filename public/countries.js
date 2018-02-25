@@ -27,6 +27,7 @@ const requestComplete = function () {
     const countryString = JSON.stringify(country);
     localStorage.setItem(twoLetterName, countryString);
     localStorage.setItem(threeLetterName, twoLetterName);
+    // because google, in it's wisdom returns the 2letter and long names only!
 
   });
 };

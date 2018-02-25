@@ -3,6 +3,7 @@
 <head>
   <title>Map Explorer</title>
   <link rel="stylesheet" href="styles.css">
+  <script src="http://code.highcharts.com/highcharts.js"></script>
   <script src="keys.js"></script>
   <script type="text/javascript"  src="https://maps.googleapis.com/maps/api/js"></script>
   <script src="displayHtml.js"></script>
@@ -15,10 +16,12 @@
 </head>
 <body>
   <main>
-    <div id="graphics">
-
-      <div id="map">
-        <!-- google map goes here -->
+    <div id="map">
+      <!-- google map goes here -->
+    </div>
+    <div id="details">
+      <div id="description">
+        <!-- location description goes here -->
       </div>
       <div id="population">
         <!-- population graph goes here -->
@@ -27,9 +30,8 @@
         <!-- area graph goes here -->
       </div>
     </div>
-    <div id="description">
-      <!-- location data goes here -->
-    </div>
+    
+
 
   </main>
 

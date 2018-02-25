@@ -1,49 +1,145 @@
+/*global: Highcharts*/
+
 const displayGraph = function (countryObject) {
-  console.log(countryObject);
 
-  const getCountryName = function (countryObject) {
-    return countryObject.name;
-  }
-
-  const getCountryArea = function (countryObject) {
-    return countryObject.area;
-
-  const getCountryPopulation = function (countryObject) {
-    return countryObject.population;
-  };
 
   const borderingCountryTwoLetterCodes = countryObject.borders.map( function (threeLetterCode) {
     return localStorage.getItem(threeLetterCode);
   });
 
   const borderingCountriesObjects = borderingCountryTwoLetterCodes.map( function (code) {
-    return localStorage.getItem(code);
+    return JSON.parse(localStorage.getItem(code));
   });
 
+  const countryNames = borderingCountriesObjects.map(function (country) {
+    return country.name;
+  });
+  countryNames.push(countryObject.name);
 
+  const populationValues = borderingCountriesObjects.map( function (country) {
+    return country.population;
+  });
+  populationValues.push(countryObject.population);
 
+  const areaValues = borderingCountriesObjects.map( function (country) {
+    return country.area;
+  });
+  areaValues.push(countryObject.area);
 
-
-
-
-
-    makeGraphPopulation();
-    displayGraphPopulation();
-
-    makeGraphArea();
-    displayGraphArea();
-
-
-
-  const displayGraphPopulation = function (names, populations) {
-
-
-
+  // function to generate a graph data entry:
+  const makeDataObject = function (nameData, yData) {
+    const newObject = {
+      name: nameData,
+      y: yData,
+    };
+    return newObject;
   };
 
-  const displayGraphArea = function (names, areas) {
 
+  // start making the Area Pie Chart Here:
+  const areaDataObjects = borderingCountriesObjects.map( function (country) {
+    return makeDataObject(country.name, country.area);
+  });
+
+  let selectedCountryAreaDataObject = [countryObject].map( function (country) {
+    return makeDataObject(country.name, country.area);
+  });
+  selectedCountryAreaDataObject.sliced = true;
+  selectedCountryAreaDataObject.selected = true;
+
+  const areaDataArray = areaDataObjects.concat(selectedCountryAreaDataObject);
+
+  // grab div for area chart
+  const divArea = document.querySelector("#area");
+  // generate the pie chart
+  const areaChartData = {
+    chart: {
+      plotBackgroundColor: null,
+      plotBorderWidth: null,
+      plotShadow: false,
+      type: "pie"
+    },
+    title: {
+      text: "Relative area of bordering countries"
+    },
+    tooltip: {
+      pointFormat: "{series.name}: <b>{point.percentage:.1f}%</b>"
+    },
+    plotOptions: {
+      pie: {
+        allowPointSelect: true,
+        cursor: "pointer",
+        dataLabels: {
+          enabled: true,
+          format: "<b>{point.name}</b>: {point.percentage:.1f} %",
+          style: {
+            color: (Highcharts.theme && Highcharts.theme.contrastTextColor) || "black"
+          }
+        }
+      }
+    },
+    series: [{
+      name: "Countries",
+      colorByPoint: true,
+      data: areaDataArray
+    }]
   };
+
+  // actually render the chart
+  const areaChart = Highcharts.chart(divArea, areaChartData);
+
+
+  // start making the Population Pie Chart Here:
+  const populationDataObjects = borderingCountriesObjects.map( function (country) {
+    return makeDataObject(country.name, country.population);
+  });
+
+  let selectedCountryPopulationDataObject = [countryObject].map( function (country) {
+    return makeDataObject(country.name, country.population);
+  });
+
+  const populationDataArray = populationDataObjects.concat(selectedCountryPopulationDataObject);
+
+  // grab div for population chart
+  const divPopulation = document.querySelector("#population");
+
+  // generate the pie chart
+  const populationChartData = {
+    chart: {
+      plotBackgroundColor: null,
+      plotBorderWidth: null,
+      plotShadow: false,
+      type: "pie"
+    },
+    title: {
+      text: "Relative population of bordering countries"
+    },
+    tooltip: {
+      pointFormat: "{series.name}: <b>{point.percentage:.1f}%</b>"
+    },
+    plotOptions: {
+      pie: {
+        allowPointSelect: true,
+        cursor: "pointer",
+        dataLabels: {
+          enabled: true,
+          format: "<b>{point.name}</b>: {point.percentage:.1f} %",
+          style: {
+            color: (Highcharts.theme && Highcharts.theme.contrastTextColor) || "black"
+          }
+        }
+      }
+    },
+    series: [{
+      name: "Countries",
+      colorByPoint: true,
+      data: areaDataArray
+    }]
+  };
+
+  // actually render the chart
+  const populationChart = Highcharts.chart(divPopulation, populationChartData);
+
 
 
 

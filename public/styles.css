@@ -2,7 +2,27 @@
 
 
 #map{
-  height: 500px;
-  width: 500px;
+  height: 400px;
+  width: 100%;
   background-color: grey;
+}
+
+#details{
+  border: 1px solid black
+  height: auto;
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  box-sizing: border-box;
+  justify-content: space-between;
+}
+
+#details div {
+  border: 1px solid black;
+  width: 30%;
+  margin: 5px;
+}
+
+main {
+
 }
