@@ -25,8 +25,8 @@ const generateHtml = function (countryObject) {
 
   ul.appendChild(li);
 
-  descriptionDiv.appendChild(nameHeading);
   descriptionDiv.appendChild(img);
+  descriptionDiv.appendChild(nameHeading);
   descriptionDiv.appendChild(ul);
 
 

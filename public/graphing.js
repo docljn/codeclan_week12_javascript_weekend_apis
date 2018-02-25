@@ -11,21 +11,6 @@ const displayGraph = function (countryObject) {
     return JSON.parse(localStorage.getItem(code));
   });
 
-  const countryNames = borderingCountriesObjects.map(function (country) {
-    return country.name;
-  });
-  countryNames.push(countryObject.name);
-
-  const populationValues = borderingCountriesObjects.map( function (country) {
-    return country.population;
-  });
-  populationValues.push(countryObject.population);
-
-  const areaValues = borderingCountriesObjects.map( function (country) {
-    return country.area;
-  });
-  areaValues.push(countryObject.area);
-
   // function to generate a graph data entry:
   const makeDataObject = function (nameData, yData) {
     const newObject = {
