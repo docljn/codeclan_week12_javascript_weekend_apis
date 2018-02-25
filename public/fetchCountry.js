@@ -1,6 +1,5 @@
 const fetchCountry = function (jsonStringOfCountryDetails) {
   const countryObject = JSON.parse(jsonStringOfCountryDetails);
-  console.log(countryObject);
 
   // check that result isn't null somehow?
 
@@ -12,6 +11,7 @@ const fetchCountry = function (jsonStringOfCountryDetails) {
   const storedCountryObject = JSON.parse(storedCountryString);
 
   generateHtml(storedCountryObject);
+  getAirQuality(storedCountryObject.latlng);
 
 
 };

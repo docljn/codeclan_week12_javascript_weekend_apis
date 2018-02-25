@@ -11,6 +11,8 @@ const initialize = function () {
   // set the map up to respond to a click;
   mainMap.addClickEvent();
 
+  
+
 
 
 };
