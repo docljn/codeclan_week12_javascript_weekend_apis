@@ -21,7 +21,7 @@ const generateHtml = function (countryObject) {
   const ul = document.createElement("ul");
 
   const li = document.createElement("li");
-  li.innerText = "Capital: " + capital + "\n" + "Population: " + population + "\n" + region + " region";
+  li.innerText = "Capital: " + capital + "\n" + "Population: " + population;
 
   ul.appendChild(li);
 
