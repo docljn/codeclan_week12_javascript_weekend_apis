@@ -11,7 +11,6 @@ const fetchCountry = function (jsonStringOfCountryDetails) {
   const storedCountryObject = JSON.parse(storedCountryString);
 
   generateHtml(storedCountryObject);
-  getAirQuality(storedCountryObject.latlng);
 
 
 };

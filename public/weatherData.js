@@ -17,7 +17,7 @@ const generateWeatherData = function (airQualityObject) {
   // make html elements needed
 
   const stationHeading = document.createElement("h3");
-  stationHeading.innerText = "Nearest Weather Station: ";
+  stationHeading.innerText = "Nearest Weather Station";
 
   const weatherUL = document.createElement("ul");
 
@@ -31,9 +31,9 @@ const generateWeatherData = function (airQualityObject) {
   const liTemp = document.createElement("li");
   liTemp.innerText = currentTemperature + htmlDegrees;
 
-  weatherUL.appendChild(liStation);
   weatherUL.appendChild(icon);
   weatherUL.appendChild(liTemp);
+  weatherUL.appendChild(liStation);
 
   weatherDiv.appendChild(stationHeading);
   weatherDiv.appendChild(weatherUL);

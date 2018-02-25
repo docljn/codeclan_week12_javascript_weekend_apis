@@ -1,6 +1,10 @@
 const generateHtml = function (countryObject) {
-  const descriptionDiv = document.getElementById("description");
-  descriptionDiv.innerHTML = "";
+
+  const statsDiv = document.getElementById("stats");
+  statsDiv.innerHTML = "";
+
+  const flagDiv = document.getElementById("flag");
+  flagDiv.innerHTML = "";
 
   const name = countryObject.name;
   const capital = countryObject.capital;
@@ -24,10 +28,10 @@ const generateHtml = function (countryObject) {
   li.innerText = "Capital: " + capital + "\n" + "Population: " + population;
 
   ul.appendChild(li);
+  statsDiv.appendChild(nameHeading);
+  statsDiv.appendChild(ul);
 
-  descriptionDiv.appendChild(img);
-  descriptionDiv.appendChild(nameHeading);
-  descriptionDiv.appendChild(ul);
+  flagDiv.appendChild(img);
 
 
   displayGraph(countryObject);

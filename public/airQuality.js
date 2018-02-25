@@ -3,12 +3,12 @@
 //   key: "GLJGqzbnNkn4rNLXf"
 // }
 
-const getAirQuality = function (latlngArray) {
+const getAirQuality = function (latlngObject) {
 
   const url = API_LOCATIONS.airQuality.url;
   const key = API_LOCATIONS.airQuality.key;
 
-  let completeURL = url + "nearest_city?" + "lat=" + latlngArray[0] + "&lon=" + latlngArray[1] + "&key=" + key;
+  let completeURL = url + "nearest_city?" + "lat=" + latlngObject.lat + "&lon=" + latlngObject.lng + "&key=" + key;
   console.log(completeURL);
 
   makeAirQualityRequest(completeURL, sendAPIRequest);

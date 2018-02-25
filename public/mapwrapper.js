@@ -25,6 +25,7 @@ MapWrapper.prototype.addClickEvent = function () {
       this.markerArray = [];}
     const clickCoordinates = { lat: event.latLng.lat(), lng: event.latLng.lng() };
     geolocator(clickCoordinates);
+    getAirQuality(clickCoordinates);
     const marker = this.addMarker(clickCoordinates);
     this.markerArray.push(marker);
     this.googleMap.setCenter(clickCoordinates);
