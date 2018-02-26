@@ -2,6 +2,8 @@
 
 const displayGraph = function (countryObject) {
 
+  const divDetails = document.getElementById("details");
+  divDetails.innerHTML = "";
 
   const borderingCountryTwoLetterCodes = countryObject.borders.map( function (threeLetterCode) {
     return localStorage.getItem(threeLetterCode);
@@ -34,8 +36,10 @@ const displayGraph = function (countryObject) {
 
   const areaDataArray = areaDataObjects.concat(selectedCountryAreaDataObject);
 
-  // grab div for area chart
-  const divArea = document.querySelector("#area");
+  // make div for area chart
+  const divArea = document.createElement("div");
+  divArea.class += "area";
+  divDetails.appendChild(divArea);
   // generate the pie chart
   const areaChartData = {
     chart: {
@@ -90,7 +94,8 @@ const displayGraph = function (countryObject) {
   const populationDataArray = populationDataObjects.concat(selectedCountryPopulationDataObject);
 
   // grab div for population chart
-  const divPopulation = document.querySelector("#population");
+  const divPopulation = document.createElement("div"); divPopulation.class += "population";
+  divDetails.appendChild(divPopulation);
 
   // generate the pie chart
   const populationChartData = {
